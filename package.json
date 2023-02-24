@@ -1,0 +1,104 @@
+{
+  "name": "@qwikest/icons",
+  "version": "0.0.0",
+  "description": "Include popular icons easily in your Qwik projects with `@qwikest/icons`.",
+  "main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./lib-types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./lib-types/generated/index.d.ts"
+    },
+    "./octaicons": {
+      "import": "./lib/go.mjs",
+      "require": "./lib/go.cjs",
+      "types": "./lib-types/generated/go/go.d.ts"
+    },
+    "./heroicons": {
+      "import": "./lib/hi.mjs",
+      "require": "./lib/hi.cjs",
+      "types": "./lib-types/generated/hi/hi.d.ts"
+    },
+    "./iconicons": {
+      "import": "./lib/io.mjs",
+      "require": "./lib/io.cjs",
+      "types": "./lib-types/generated/io/io.d.ts"
+    },
+    "./lucide": {
+      "import": "./lib/lu.mjs",
+      "require": "./lib/lu.cjs",
+      "types": "./lib-types/generated/lu/lu.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "octaicons": [
+        "./lib-types/generated/go/go.d.ts"
+      ],
+      "heroicons": [
+        "./lib-types/generated/hi/hi.d.ts"
+      ],
+      "io": [
+        "./lib-types/generated/io/io.d.ts"
+      ],
+      "lucide": [
+        "./lib-types/generated/lu/lu.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "lib",
+    "lib-types"
+  ],
+  "engines": {
+    "node": ">=15.0.0"
+  },
+  "private": false,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.lib": "vite build --mode lib",
+    "build.types": "tsc --emitDeclarationOnly",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "prettier --write .",
+    "fmt.check": "prettier --check .",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "release": "pnpm generate && pnpm build.lib && pnpm build.types && pnpm np --no-cleanup",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik",
+    "generate": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
+    "generate-5": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts"
+  },
+  "devDependencies": {
+    "@builder.io/qwik": "0.19.2",
+    "@primer/octicons": "^17.12.0",
+    "@types/eslint": "8.21.1",
+    "@types/node": "^18.14.0",
+    "@types/node-fetch": "latest",
+    "@typescript-eslint/eslint-plugin": "5.53.0",
+    "@typescript-eslint/parser": "5.53.0",
+    "eslint": "8.34.0",
+    "eslint-plugin-qwik": "latest",
+    "fast-glob": "^3.2.12",
+    "heroicons": "^2.0.16",
+    "ionicons": "^6.1.3",
+    "lucide-static": "^0.115.0",
+    "node-fetch": "3.3.0",
+    "np": "7.6.1",
+    "prettier": "2.8.4",
+    "svgo": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "4.9.5",
+    "undici": "5.20.0",
+    "vite": "4.1.4"
+  },
+  "peerDependencies": {
+    "@builder.io/qwik": "^0.19.0"
+  },
+  "dependencies": {
+    "rxjs-boost": "^1.1.1"
+  }
+}
