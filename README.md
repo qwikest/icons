@@ -1,47 +1,46 @@
-# Qwik Library ⚡️
+# Qwik Icons
 
-- [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik on GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
-- [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
+Include popular icons easily in your Qwik projects with `@qwikest/icons` 🚀
 
----
+Currently included libraries (with icon prefix):
 
-## Project Structure
+- `Lu`: [Lucide](https://lucide.dev/) icons
+- `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
+- `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
+- `Io`: [Ionicons](https://ionic.io/ionicons) by Ionic
 
-Inside of you project, you'll see the following directories and files:
+## Installation
 
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── index.ts
+Simply install the package with your package manager of choice:
+
+```bash
+npm i @qwikest/icons
+yarn add @qwikest/icons
+pnpm add @qwikest/icons
 ```
 
-- `src/components`: Recommended directory for components.
+## Usage
 
-- `index.ts`: This is the entry point of your component library, make sure all the public components are exported from this file.
+```tsx
+import { LuRocket } from "@qwikest/icons/lucide";
 
-## Development
-
-Development mode uses [Vite's development server](https://vitejs.dev/). For Qwik during development, the `dev` command will also server-side render (SSR) the output. The client-side development modules loaded by the browser.
-
+export const MyComponent = component$(() => {
+  // Icon size and color are inherited by default ⬇️
+  return (
+    <div style={{ color: "red", fontSize: "40px" }}>
+      <LuRocket />
+    </div>
+  );
+});
 ```
-pnpm dev
+
+## Available Libraries
+
+```tsx
+import { GoFlame24, .. } from "@qwikest/icons/octicons";
+import { HiAcademicCapMini, .. } from "@qwikest/icons/heroicons";
+import { IoAirplane, .. } from "@qwikest/icons/ionicons";
+import { LuRocket, .. } from "@qwikest/icons/lucide";
 ```
 
-> Note: during dev mode, Vite will request many JS files, which does not represent a Qwik production build.
-
-## Production
-
-The production build should generate the production build of your component library in (./lib) and the typescript type definitions in (./lib-types).
-
-```
-pnpm build
-```
+> **Missing a library?** Feel free to open an issue or even a MR 🤝
