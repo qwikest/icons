@@ -66,6 +66,9 @@
   },
   "private": false,
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "qwik build",
     "build.lib": "vite build --mode lib",
