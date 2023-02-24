@@ -1,7 +1,16 @@
 {
   "name": "@qwikest/icons",
   "version": "0.0.0",
-  "description": "Include popular icons easily in your Qwik projects with `@qwikest/icons`.",
+  "description": "Include popular icons easily in your Qwik projects with `@qwikest/icons`. Includes lucide, octicons & more 🎁",
+  "license": "MIT",
+  "keywords": [
+    "qwik",
+    "icons",
+    "lucide",
+    "octicons",
+    "ionicons",
+    "heroicons"
+  ],
   "main": "./lib/index.qwik.mjs",
   "qwik": "./lib/index.qwik.mjs",
   "types": "./lib-types/index.d.ts",
