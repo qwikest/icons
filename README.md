@@ -65,4 +65,4 @@ import { IoAirplane, .. } from "@qwikest/icons/ionicons";
 import { LuRocket, .. } from "@qwikest/icons/lucide";
 ```
 
-> **Missing a library?** Feel free to open an issue or even a MR 🤝
+> **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝
