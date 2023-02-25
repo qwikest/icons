@@ -77,7 +77,7 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
             ...colorAttributes,
             width: "1em",
             height: "1em",
-            "data-qwikest-icon": names.dashCase,
+            "data-qwikest-icon": undefined,
           }).map(([key, value]) => ({ [key]: value })),
         },
       },
