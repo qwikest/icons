@@ -34,6 +34,28 @@ export const MyComponent = component$(() => {
 });
 ```
 
+## Variants
+
+A few libraries support different icon variants.
+They can be configured via `useContext` or directly via props.
+Feel free to use the context to specify a global default 🙏
+
+```ts
+export const MyComponent = component$(() => {
+  useContextProvider(IoContext, { variant: "outline" });
+
+  // IoAccessibility will infer `variant: outline` ⬇️
+  return (
+    <div>
+      <IoAccessibility />
+      <IoAddCircle variant="sharp" />
+    </div>
+  );
+});
+```
+
+> Some libraries like `Octicons` even support different viewBoxes. Use the `res` property to specify them. Each icon library comes with a props type (like `LuProps`) which contains all possible variants!
+
 ## Available Libraries
 
 ```tsx
