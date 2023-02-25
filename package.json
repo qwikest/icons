@@ -78,12 +78,13 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "release": "pnpm generate && pnpm build.lib && pnpm build.types && pnpm np --yolo",
+    "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "generate": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-5": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-50": "export ICON_LIMIT=50 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts"
+    "generate-icons": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
+    "generate-5-icons": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
+    "generate-50-icons": "export ICON_LIMIT=50 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
+    "generate-license": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-license.ts"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.19.2",
