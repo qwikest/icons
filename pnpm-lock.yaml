@@ -17,15 +17,11 @@ specifiers:
   node-fetch: 3.3.0
   np: 7.6.3
   prettier: 2.8.4
-  rxjs-boost: ^1.1.1
   svgo: ^3.0.2
   ts-node: ^10.9.1
   typescript: 4.9.5
   undici: 5.20.0
   vite: 4.1.4
-
-dependencies:
-  rxjs-boost: 1.1.1
 
 devDependencies:
   '@builder.io/qwik': 0.19.2_undici@5.20.0
@@ -3045,13 +3041,6 @@ packages:
     dependencies:
       queue-microtask: 1.2.3
     dev: true
-
-  /rxjs-boost/1.1.1:
-    resolution: {integrity: sha512-jziOsbErm2i8HXTrk51uOT5Aw7lQbvuwEZj1ib5dPnys401w+bB+H2FXHNG0WRUhUUtV8ypOLJV4DvOge4gsZQ==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      rxjs: ^6.6.0
-    dev: false
 
   /rxjs/6.6.7:
     resolution: {integrity: sha512-hTdwr+7yYNIT5n4AMYp85KA6yw2Va0FLa3Rguvbpa4W3I5xynaBZo41cM3XM+4Q6fRMj3sBYIR1VAmZMXYJvRQ==}

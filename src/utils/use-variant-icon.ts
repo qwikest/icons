@@ -1,5 +1,5 @@
 import { Component, ContextId } from "@builder.io/qwik";
-import { IconProps } from "../types/icon-props";
+import { IconProps } from "./icon-props";
 import { useVariantProps } from "./use-variant-props";
 
 interface Variant {

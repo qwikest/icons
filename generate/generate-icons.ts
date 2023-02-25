@@ -91,7 +91,7 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
 
   const fileContent = [
     'import { component$ } from "@builder.io/qwik"',
-    'import { IconProps } from "../../../types/icon-props"',
+    'import { IconProps } from "../../../utils/icon-props"',
     `export const ${names.camelCase} = component$((props: IconProps) =>`,
     svgElement,
     `);`,
@@ -134,7 +134,7 @@ async function generateIcon(icon: GenerateIcon, pack: IconPackConfig) {
 
   const fileContent = [
     'import { component$ } from "@builder.io/qwik"',
-    'import { IconProps } from "../../../types/icon-props"',
+    'import { IconProps } from "../../../utils/icon-props"',
     `import { ${propsTypeName} } from "../props"`,
     ...variantImports,
     ...icon.variants.map(
