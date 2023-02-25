@@ -78,7 +78,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "release": "pnpm generate && pnpm build.lib && pnpm build.types && pnpm np --no-cleanup",
+    "release": "pnpm generate && pnpm build.lib && pnpm build.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
     "generate": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
