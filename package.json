@@ -1,6 +1,6 @@
 {
   "name": "@qwikest/icons",
-  "version": "0.0.1-0",
+  "version": "0.0.1-1",
   "description": "Include popular icons easily in your Qwik projects with `@qwikest/icons`. Includes lucide, octicons & more 🎁",
   "license": "MIT",
   "keywords": [
