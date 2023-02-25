@@ -82,7 +82,8 @@
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
     "generate": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-5": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts"
+    "generate-5": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
+    "generate-50": "export ICON_LIMIT=50 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.19.2",

@@ -1,10 +1,7 @@
 import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import { basename, dirname, join } from "path";
 import { optimize } from "svgo";
-import {
-  IconPackConfig,
-  IconPackContents as IconPackContent,
-} from "../src/utils/config.interface";
+import { AnyIconVariants, IconPackConfig } from "./config.interface";
 import { configs } from "./configs.js";
 
 const iconLimit = process.env["ICON_LIMIT"];
@@ -23,6 +20,10 @@ function getIndexPath(pack: IconPackConfig) {
   return getOutputPath(pack, pack.prefix.toLowerCase(), ".ts");
 }
 
+function getVariantPath(iconDashCase: string, pack: IconPackConfig) {
+  return getOutputPath(pack, "variants/" + iconDashCase, ext);
+}
+
 function dashCase(input: string) {
   return input
     .replace(/(?<!^)[A-Z]/g, (match) => "-" + match.toLowerCase())
@@ -37,14 +38,17 @@ export function camelCase(input: string) {
   });
 }
 
-function getNames(
-  baseName: string,
-  contents: IconPackContent,
-  pack: IconPackConfig
-) {
-  const withoutExtension = camelCase(baseName.replace(/\..*?$/, ""));
-  const formatted =
-    pack.prefix + (contents?.formatter?.(withoutExtension) ?? withoutExtension);
+function getIconVariantNames(path: string, pack: IconPackConfig) {
+  const { name, ...variants } = pack.contents.extract(path);
+
+  if (!name) {
+    throw new Error(`Cannot resolve icon name for "${path}".`);
+  }
+
+  const variantSuffix = Object.values(variants)
+    .map((value) => "-" + value)
+    .join("");
+  const formatted = "__" + pack.prefix + camelCase(name) + variantSuffix;
 
   return {
     camelCase: camelCase(formatted),
@@ -52,12 +56,8 @@ function getNames(
   };
 }
 
-async function generateIcon(
-  file: string,
-  contents: IconPackContent,
-  pack: IconPackConfig
-) {
-  const names = getNames(basename(file), contents, pack);
+async function generateIconVariant(file: string, pack: IconPackConfig) {
+  const names = getIconVariantNames(file, pack);
 
   const otherColoring = pack.coloring === "fill" ? "stroke" : "fill";
   const keepColoring = pack.coloring === "keep";
@@ -91,43 +91,147 @@ async function generateIcon(
 
   const fileContent = [
     'import { component$ } from "@builder.io/qwik"',
-    'import { IconProps } from "../../types/icon-props"',
+    'import { IconProps } from "../../../types/icon-props"',
     `export const ${names.camelCase} = component$((props: IconProps) =>`,
     svgElement,
     `);`,
   ].join("\n");
 
-  const path = getOutputPath(pack, names.dashCase, ext);
+  const path = getVariantPath(names.dashCase, pack);
 
   await mkdir(dirname(path), { recursive: true });
   await writeFile(path, fileContent);
   return { path, symbolName: names.camelCase, names };
 }
 
-async function generateIconPackContent(
-  content: IconPackContent,
-  pack: IconPackConfig
-) {
-  const fileLimit = iconLimit ? parseInt(iconLimit) : undefined;
-  const files = (await content.files).slice(0, fileLimit);
-  return Promise.all(files.map((file) => generateIcon(file, content, pack)));
+interface GenerateIcon {
+  name: string;
+  variants: {
+    symbolName: string;
+    path: string;
+    variants: AnyIconVariants;
+  }[];
+}
+async function generateIcon(icon: GenerateIcon, pack: IconPackConfig) {
+  const symbolName = pack.prefix + camelCase(icon.name);
+  const propsTypeName = `${pack.prefix}Props`;
+  const variantKeys = Object.keys(pack.variants);
+  const hasVariants = icon.variants.length >= 1;
+
+  const iconDefinition = hasVariants
+    ? `const icon = useVariantIcon(variants, { ${variantKeys.join()} }, ${
+        pack.prefix
+      }Context, ${pack.prefix}PropsDefault)`
+    : "const icon = variants[0];";
+
+  const variantImports = hasVariants
+    ? [
+        'import { useVariantIcon } from "../../../utils/use-variant-icon"',
+        `import { ${pack.prefix}Context } from "../context";`,
+        `import { ${propsTypeName}Default } from "../props"`,
+      ]
+    : [];
+
+  const fileContent = [
+    'import { component$ } from "@builder.io/qwik"',
+    'import { IconProps } from "../../../types/icon-props"',
+    `import { ${propsTypeName} } from "../props"`,
+    ...variantImports,
+    ...icon.variants.map(
+      (variant) =>
+        `import { ${variant.symbolName} } from "../variants/${basename(
+          variant.path,
+          ext
+        )}"`
+    ),
+    "const variants = [",
+    ...icon.variants.map(
+      (icon) => `{
+        component: ${icon.symbolName},
+        variants: ${JSON.stringify(icon.variants, undefined, " ")}
+      },`
+    ),
+    "]",
+    `export const ${symbolName} = component$(({ ${variantKeys
+      .map((key) => key + ",")
+      .join(" ")} ...props}: IconProps & ${propsTypeName}) => {`,
+    iconDefinition,
+    `return <icon.component {...props} />`,
+    `});`,
+  ].join("\n");
+
+  const path = getOutputPath(pack, "icons/" + dashCase(icon.name), ext);
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(path, fileContent);
+
+  return { symbolName, path };
+}
+
+async function generateProps(pack: IconPackConfig) {
+  const fileContent = `export interface ${pack.prefix}Props {
+${Object.entries(pack.variants).map(
+  ([variant, values]) =>
+    `  ${variant}?: ${values.map((value) => `"${value}"`).join(" | ")}`
+)}
+}
+
+export const ${pack.prefix}PropsDefault: ${pack.prefix}Props = ${JSON.stringify(
+    pack.defaultVariants
+  )};
+`;
+
+  const path = getOutputPath(pack, "props", ext);
+  await writeFile(path, fileContent);
+}
+
+async function generateContext(pack: IconPackConfig) {
+  const fileContent = `import { createContextId } from "@builder.io/qwik";
+  import { ${pack.prefix}Props } from "./props";
+  
+  export const ${pack.prefix}Context = createContextId<${pack.prefix}Props>("${pack.prefix}Context");`;
+
+  const path = getOutputPath(pack, "context", ext);
+  await writeFile(path, fileContent);
 }
 
 async function generateIcons(pack: IconPackConfig) {
   await rm(dirname(getIndexPath(pack)), { force: true, recursive: true });
 
-  const result = await Promise.all(
-    pack.contents.flatMap((content) => generateIconPackContent(content, pack))
+  const fileLimit = iconLimit ? parseInt(iconLimit) : undefined;
+  const files = (await pack.contents.files).slice(0, fileLimit);
+
+  const variantsResult = await Promise.all(
+    files.map(async (file) => ({
+      file,
+      ...(await generateIconVariant(file, pack)),
+    }))
   );
+
+  const iconMap = new Map<string, GenerateIcon>();
+  variantsResult.forEach(({ path, symbolName, file }) => {
+    const { name, ...variants } = pack.contents.extract(file);
+    const current = iconMap.get(name) ?? { name, variants: [] };
+    current.variants.push({ path, symbolName, variants });
+    iconMap.set(name, current);
+  });
+
+  const result = await Promise.all(
+    Array.from(iconMap.values()).map((entry) => generateIcon(entry, pack))
+  );
+
+  await generateProps(pack);
+  await generateContext(pack);
 
   const icons = result.flat();
 
-  const indexContent = icons
-    .map(({ path, symbolName, names }) => {
-      const relative = `./${basename(path, ext)}`;
+  const indexContent = [
+    ...icons.map(({ path, symbolName }) => {
+      const relative = `./icons/${basename(path, ext)}`;
       return `export { ${symbolName} } from '${relative}';`;
-    })
-    .join("\n");
+    }),
+    `export { ${pack.prefix}Context } from './context';`,
+    `export type { ${pack.prefix}Props } from './props';`,
+  ].join("\n");
 
   await writeFile(getIndexPath(pack), indexContent);
 
@@ -136,13 +240,25 @@ async function generateIcons(pack: IconPackConfig) {
 
 async function createConfigs(packs: IconPackConfig[]) {
   const configs = JSON.stringify(
-    packs.map(({ license, licenseUrl, name, prefix, projectUrl }) => ({
-      license,
-      licenseUrl,
-      name,
-      prefix,
-      projectUrl,
-    }))
+    packs.map(
+      ({
+        license,
+        licenseUrl,
+        name,
+        prefix,
+        projectUrl,
+        variants,
+        defaultVariants,
+      }) => ({
+        license,
+        licenseUrl,
+        name,
+        prefix,
+        projectUrl,
+        variants,
+        defaultVariants,
+      })
+    )
   );
   const content = `export const configs = ${configs};`;
 
@@ -153,7 +269,8 @@ async function createRootIndex(packs: IconPackConfig[]) {
   const content = packs
     .map(
       (pack) =>
-        `export * from './${pack.prefix.toLowerCase()}/${pack.prefix.toLowerCase()}';`
+        `export * from './${pack.prefix.toLowerCase()}/${pack.prefix.toLowerCase()}';
+`
     )
     .join("\n");
 

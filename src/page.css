@@ -23,5 +23,18 @@
 .page {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 1rem;
     font-family: 'Mukta',sans-serif;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.control-section {
+    display: flex;
+    gap: 0.5rem;
 }

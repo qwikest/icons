@@ -10,5 +10,5 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "include": ["*.ts", "../src/utils/config.interface.ts"]
+  "include": ["*.ts", "config.interface.ts"]
 }
