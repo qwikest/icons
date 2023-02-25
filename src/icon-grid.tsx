@@ -1,8 +1,12 @@
-import { component$ } from "@builder.io/qwik";
+import { Component, component$ } from "@builder.io/qwik";
 import * as IconObject from "./generated";
 import { configs } from "./generated/configs";
+import { IconProps } from "./types/icon-props";
 
-const Icons = Object.entries(IconObject).map(([key, icon]) => ({ key, icon }));
+const Icons = Object.entries(IconObject).map(([key, component]) => ({
+  key,
+  component,
+}));
 
 export const IconGrid = component$(
   ({
@@ -15,8 +19,9 @@ export const IconGrid = component$(
     size: number;
   }) => {
     const icons = Icons.filter(
-      ({ icon, key }) =>
-        typeof icon === "function" && key.startsWith(config.prefix)
+      (icon): icon is { key: string; component: Component<IconProps> } =>
+        typeof icon.component === "function" &&
+        icon.key.startsWith(config.prefix)
     );
 
     return (
@@ -25,10 +30,10 @@ export const IconGrid = component$(
           {icons.map((wrapped, i) => (
             <div class="icon-card">
               <span>{wrapped.key}</span>
-              <wrapped.icon
+              <wrapped.component
                 style={{ color, fontSize: size + "px" }}
                 key={i}
-              ></wrapped.icon>
+              ></wrapped.component>
             </div>
           ))}
         </div>
