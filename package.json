@@ -11,15 +11,7 @@
     "ionicons",
     "heroicons"
   ],
-  "main": "./lib/index.qwik.mjs",
-  "qwik": "./lib/index.qwik.mjs",
-  "types": "./lib-types/index.d.ts",
   "exports": {
-    ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./lib-types/generated/index.d.ts"
-    },
     "./octicons": {
       "import": "./lib/go.mjs",
       "require": "./lib/go.cjs",
