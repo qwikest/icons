@@ -3,6 +3,11 @@
   "version": "0.0.1",
   "description": "Include popular icons easily in your Qwik projects with `@qwikest/icons`. Includes lucide, octicons & more 🎁",
   "license": "MIT",
+  "homepage": "https://github.com/qwikest/icons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qwikest/icons.git"
+  },
   "keywords": [
     "qwik",
     "icons",
