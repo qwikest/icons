@@ -92,7 +92,7 @@
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
-    "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.types && pnpm np --yolo",
+    "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.lib.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
     "generate-icons": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
