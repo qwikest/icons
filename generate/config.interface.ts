@@ -1,5 +1,10 @@
 export type AnyIconVariants = Record<string, string>;
 
+export interface IconPackDownload {
+  zip: string;
+  folder: string;
+}
+
 export interface IconPackConfig<
   Variants extends AnyIconVariants = AnyIconVariants
 > {
@@ -11,6 +16,7 @@ export interface IconPackConfig<
   defaultVariants: {
     [K in keyof Omit<Variants & {}, "name">]: string;
   };
+  download?: IconPackDownload;
   contents: {
     files: Promise<string[]>;
     extract: (path: string) => Variants & { name: string } & {};
@@ -19,4 +25,5 @@ export interface IconPackConfig<
   license: string;
   licenseUrl: string;
   coloring: "fill" | "stroke" | "keep";
+  replaceColor?: string;
 }

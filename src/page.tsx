@@ -1,7 +1,8 @@
 import { component$, useSignal, useStore } from "@builder.io/qwik";
-import { configs } from "./generated/configs";
 import { IconGrid } from "./icon-grid";
 import "./page.css";
+
+import { configs } from "./page/configs";
 
 export const Page = component$(() => {
   const color = useSignal("#212121");

@@ -10,8 +10,8 @@ export default defineConfig(() => {
         entry: [
           ...configs
             .map((config) => config.prefix.toLowerCase())
-            .map((prefix) => `./src/generated/${prefix}/${prefix}.ts`),
-          "./src/generated/index.ts",
+            .map((prefix) => `./src/lib/${prefix}/${prefix}.ts`),
+          "./src/utils/index.ts",
         ],
         formats: ["es", "cjs"],
         fileName: (format, entry) =>

@@ -4,10 +4,12 @@ Include popular icons easily in your Qwik projects with `@qwikest/icons` 🚀
 
 Currently included libraries (with icon prefix):
 
-- `Lu`: [Lucide](https://lucide.dev/) icons
-- `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
-- `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
+- `In`: [Iconoir](https://iconoir.com/)
 - `Io`: [Ionicons](https://ionic.io/ionicons) by Ionic
+- `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
+- `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
+- `Lu`: [Lucide](https://lucide.dev/) [superset of feather icons]
+- `Mo`: [Mono Icons](https://icons.mono.company/)
 
 ## Installation
 
@@ -61,8 +63,15 @@ export const MyComponent = component$(() => {
 ```tsx
 import { GoFlame24, .. } from "@qwikest/icons/octicons";
 import { HiAcademicCapMini, .. } from "@qwikest/icons/heroicons";
+import { In1stMedal, .. } from "@qwikest/icons/iconoir";
 import { IoAirplane, .. } from "@qwikest/icons/ionicons";
 import { LuRocket, .. } from "@qwikest/icons/lucide";
+import { MoAdd, .. } from "@qwikest/icons/mono-icons";
 ```
 
 > **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝
+
+## Upcoming
+
+- 🖌️ Configurable stroke width for supported packages
+- 🎁 Additional icon libraries

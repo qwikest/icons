@@ -1,6 +1,6 @@
 import { Component, component$ } from "@builder.io/qwik";
-import * as IconObject from "./generated";
-import { configs } from "./generated/configs";
+import * as IconObject from "./page/all";
+import { configs } from "./page/configs";
 import { IconProps } from "./utils/icon-props";
 
 const Icons = Object.entries(IconObject).map(([key, component]) => ({

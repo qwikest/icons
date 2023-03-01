@@ -17,40 +17,56 @@
     "heroicons"
   ],
   "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./lib/utils/index.d.ts"
+    },
     "./octicons": {
       "import": "./lib/go.mjs",
       "require": "./lib/go.cjs",
-      "types": "./lib-types/generated/go/go.d.ts"
+      "types": "./lib/lib/go/go.d.ts"
     },
     "./heroicons": {
       "import": "./lib/hi.mjs",
       "require": "./lib/hi.cjs",
-      "types": "./lib-types/generated/hi/hi.d.ts"
+      "types": "./lib/lib/hi/hi.d.ts"
+    },
+    "./iconoir": {
+      "import": "./lib/in.mjs",
+      "require": "./lib/in.cjs",
+      "types": "./lib/lib/in/in.d.ts"
     },
     "./ionicons": {
       "import": "./lib/io.mjs",
       "require": "./lib/io.cjs",
-      "types": "./lib-types/generated/io/io.d.ts"
+      "types": "./lib/lib/io/io.d.ts"
     },
     "./lucide": {
       "import": "./lib/lu.mjs",
       "require": "./lib/lu.cjs",
-      "types": "./lib-types/generated/lu/lu.d.ts"
+      "types": "./lib/lib/lu/lu.d.ts"
     }
   },
   "typesVersions": {
     "*": {
       "octicons": [
-        "./lib-types/generated/go/go.d.ts"
+        "./lib/lib/go/go.d.ts"
       ],
       "heroicons": [
-        "./lib-types/generated/hi/hi.d.ts"
+        "./lib/lib/hi/hi.d.ts"
+      ],
+      "iconoir": [
+        "./lib/lib/in/in.d.ts"
       ],
       "ionicons": [
-        "./lib-types/generated/io/io.d.ts"
+        "./lib/lib/io/io.d.ts"
       ],
       "lucide": [
-        "./lib-types/generated/lu/lu.d.ts"
+        "./lib/lib/lu/lu.d.ts"
+      ],
+      "*": [
+        "./lib/utils/index.d.ts"
       ]
     }
   },
@@ -68,8 +84,9 @@
   },
   "scripts": {
     "build": "qwik build",
-    "build.lib": "vite build --mode lib",
-    "build.types": "tsc --emitDeclarationOnly",
+    "build.lib": "pnpm build.lib.browser && pnpm build.lib.types",
+    "build.lib.browser": "vite build --mode lib",
+    "build.lib.types": "tsc -p tsconfig.lib.json",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -108,5 +125,11 @@
   },
   "peerDependencies": {
     "@builder.io/qwik": "^0.19.0"
+  },
+  "dependencies": {
+    "@types/tar": "^6.1.4",
+    "got": "^12.5.3",
+    "node-stream-zip": "^1.15.0",
+    "tar": "^6.1.13"
   }
 }

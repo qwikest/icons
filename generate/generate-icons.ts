@@ -3,18 +3,16 @@ import { basename, dirname, join } from "path";
 import { optimize } from "svgo";
 import { AnyIconVariants, IconPackConfig } from "./config.interface";
 import { configs } from "./configs.js";
+import { downloadIcons } from "./download-icons.js";
 
 const iconLimit = process.env["ICON_LIMIT"];
-const baseOutputPath = "src/generated";
+const baseOutputPath = "src/lib";
+const pageOutputPath = "src/page";
+
 const getOutputPath = (pack: IconPackConfig, name: string, ext: string) =>
   `${baseOutputPath}/${pack.prefix.toLowerCase()}/${name}${ext}`;
 
 const ext = ".tsx";
-
-function getFolder(path: string) {
-  const splitted = path.split("/");
-  return splitted[splitted.length - 2];
-}
 
 function getIndexPath(pack: IconPackConfig) {
   return getOutputPath(pack, pack.prefix.toLowerCase(), ".ts");
@@ -33,8 +31,8 @@ function dashCase(input: string) {
 }
 
 export function camelCase(input: string) {
-  return input.replace(/(?:^|-)([a-z0-9])/g, (result) => {
-    return result.replace(/^-/, "").toUpperCase();
+  return input.replace(/(?:^|[- ])([a-z0-9])/g, (result) => {
+    return result.replace(/^[- ]/, "").toUpperCase();
   });
 }
 
@@ -67,7 +65,11 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
     : { [pack.coloring]: "currentColor", [otherColoring]: "none" };
 
   const content = (await readFile(file)).toString();
-  const optimized = optimize(content, {
+  const replaced = pack.replaceColor
+    ? content.replace(new RegExp(pack.replaceColor, "g"), "currentColor")
+    : content;
+
+  const optimized = optimize(replaced, {
     plugins: [
       "removeDimensions",
       {
@@ -87,7 +89,7 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
   const svgElement = optimized
     .match(/<svg[\w\W]*<\/svg>/gm)
     ?.toString()
-    .replace(">", `{...props} >`);
+    .replace(">", ` {...props} >`);
 
   const fileContent = [
     'import { component$ } from "@builder.io/qwik"',
@@ -197,6 +199,10 @@ async function generateContext(pack: IconPackConfig) {
 async function generateIcons(pack: IconPackConfig) {
   await rm(dirname(getIndexPath(pack)), { force: true, recursive: true });
 
+  if (pack.download) {
+    await downloadIcons(pack);
+  }
+
   const fileLimit = iconLimit ? parseInt(iconLimit) : undefined;
   const files = (await pack.contents.files).slice(0, fileLimit);
 
@@ -262,25 +268,28 @@ async function createConfigs(packs: IconPackConfig[]) {
   );
   const content = `export const configs = ${configs};`;
 
-  await writeFile(join(baseOutputPath, "configs.ts"), content);
+  await writeFile(join(pageOutputPath, "configs.ts"), content);
 }
 
 async function createRootIndex(packs: IconPackConfig[]) {
   const content = packs
     .map(
       (pack) =>
-        `export * from './${pack.prefix.toLowerCase()}/${pack.prefix.toLowerCase()}';
+        `export * from '../lib/${pack.prefix.toLowerCase()}/${pack.prefix.toLowerCase()}';
 `
     )
     .join("\n");
 
-  await writeFile(join(baseOutputPath, "index.ts"), content);
+  await writeFile(join(pageOutputPath, "all.ts"), content);
 }
 
 async function cleanup() {
   await rm(baseOutputPath, { force: true, recursive: true });
+  await rm(pageOutputPath, { force: true, recursive: true });
   await mkdir(baseOutputPath);
+  await mkdir(pageOutputPath);
   await writeFile(join(baseOutputPath, ".gitkeep"), "");
+  await writeFile(join(pageOutputPath, ".gitkeep"), "");
 }
 
 export async function run() {

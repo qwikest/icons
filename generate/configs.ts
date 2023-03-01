@@ -38,6 +38,24 @@ export const configs = [
     coloring: "stroke",
   }),
   definePack({
+    name: "Iconoir",
+    prefix: "In",
+    variants: {},
+    defaultVariants: {},
+    download: {
+      zip: "https://github.com/iconoir-icons/iconoir/archive/refs/heads/main.zip",
+      folder: "iconoir-main/icons",
+    },
+    contents: {
+      files: glob("download/Iconoir/*.svg"),
+      extract: extractor(/^.*\/(?<name>.+?).svg/),
+    },
+    projectUrl: "https://iconoir.com/",
+    license: "MIT",
+    licenseUrl: "https://github.com/iconoir-icons/iconoir/blob/main/LICENSE",
+    coloring: "keep",
+  }),
+  definePack({
     name: "Github Octicons",
     prefix: "Go",
     variants: { res: ["12", "16", "24", "48", "96"] },
@@ -100,5 +118,25 @@ export const configs = [
     license: "MIT",
     licenseUrl: "https://opensource.org/licenses/MIT",
     coloring: "keep",
+  }),
+  definePack({
+    name: "MonoIcons",
+    prefix: "Mo",
+    variants: {},
+    defaultVariants: {},
+    download: {
+      zip: "https://github.com/mono-company/mono-icons/archive/refs/heads/master.zip",
+      folder: "mono-icons-master/svg",
+    },
+    contents: {
+      files: glob("download/MonoIcons/*.svg"),
+      extract: extractor(/^.*\/(?<name>.+?).svg/),
+    },
+    projectUrl: "https://icons.mono.company/",
+    license: "MIT",
+    licenseUrl:
+      "https://github.com/mono-company/mono-icons/blob/master/LICENSE.md",
+    coloring: "keep",
+    replaceColor: "#0D0D0D",
   }),
 ];

@@ -38,5 +38,8 @@ lerna-debug.log*
 !.yarn/releases
 
 # Generated Output
-src/generated/*
-!src/generated/.gitkeep
+src/lib/*
+!src/lib/.gitkeep
+src/page/*
+!src/page/.gitkeep
+download
