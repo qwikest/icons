@@ -4,12 +4,14 @@ Include popular icons easily in your Qwik projects with `@qwikest/icons` 🚀
 
 Currently included libraries (with icon prefix):
 
+- `Bs`: [Bootstrap Icons](https://icons.getbootstrap.com/)
+- `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
+- `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
 - `In`: [Iconoir](https://iconoir.com/)
 - `Io`: [Ionicons](https://ionic.io/ionicons) by Ionic
-- `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
-- `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
 - `Lu`: [Lucide](https://lucide.dev/) [superset of feather icons]
 - `Mo`: [Mono Icons](https://icons.mono.company/)
+- `Mo`: [Simple icons](https://simpleicons.org/) [icons for popular brands]
 
 ## Installation
 
@@ -61,12 +63,14 @@ export const MyComponent = component$(() => {
 ## Available Libraries
 
 ```tsx
+import { Bs1Circle, .. } from "@qwikest/icons/bootstrap";
 import { GoFlame24, .. } from "@qwikest/icons/octicons";
 import { HiAcademicCapMini, .. } from "@qwikest/icons/heroicons";
 import { In1stMedal, .. } from "@qwikest/icons/iconoir";
 import { IoAirplane, .. } from "@qwikest/icons/ionicons";
 import { LuRocket, .. } from "@qwikest/icons/lucide";
 import { MoAdd, .. } from "@qwikest/icons/mono-icons";
+import { Si1Password, .. } from "@qwikest/icons/simpleicons";
 ```
 
 > **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝
@@ -75,3 +79,4 @@ import { MoAdd, .. } from "@qwikest/icons/mono-icons";
 
 - 🖌️ Configurable stroke width for supported packages
 - 🎁 Additional icon libraries
+- 🎨 Built-in company based colors for [simple icons](https://simpleicons.org/)
