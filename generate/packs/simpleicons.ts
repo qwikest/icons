@@ -2,7 +2,7 @@ import glob from "fast-glob";
 import { definePack } from "../define-pack";
 import { extractor } from "../extractor";
 
-const extractRegex = /^.*\/(?<name>.+?)(-(?<variant>fill))?.svg/;
+const extractRegex = /^.*\/(?<name>.+?)(-(?<variant>fill))?\.svg/;
 
 export const simpleIconsPack = definePack({
   name: "SimpleIcons",
@@ -11,7 +11,7 @@ export const simpleIconsPack = definePack({
   defaultVariants: {},
   contents: {
     files: glob("node_modules/simple-icons/icons/*.svg"),
-    extract: extractor(/^.*\/(?<name>.+?).svg/),
+    extract: extractor(/^.*\/(?<name>.+?)\.svg/),
   },
   projectUrl: "https://simpleicons.org/",
   license: "CC0 1.0",

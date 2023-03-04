@@ -9,7 +9,7 @@ export const ioniconsPack = definePack({
   defaultVariants: { variant: "solid" },
   contents: {
     files: glob("node_modules/ionicons/dist/svg/*.svg"),
-    extract: extractor(/^.*\/(?<name>.+?)(-(?<variant>[a-z]+))?.svg/, {
+    extract: extractor(/^.*\/(?<name>.+?)(-(?<variant>[a-z]+))?\.svg/, {
       variant: "solid",
     }),
   },

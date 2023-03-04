@@ -13,7 +13,7 @@ export const iconoirPack = definePack({
   },
   contents: {
     files: glob("download/Iconoir/*.svg"),
-    extract: extractor(/^.*\/(?<name>.+?).svg/),
+    extract: extractor(/^.*\/(?<name>.+?)\.svg/),
   },
   projectUrl: "https://iconoir.com/",
   license: "MIT",

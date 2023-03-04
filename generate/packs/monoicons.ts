@@ -13,7 +13,7 @@ export const monoIconsPack = definePack({
   },
   contents: {
     files: glob("download/MonoIcons/*.svg"),
-    extract: extractor(/^.*\/(?<name>.+?).svg/),
+    extract: extractor(/^.*\/(?<name>.+?)\.svg/),
   },
   projectUrl: "https://icons.mono.company/",
   license: "MIT",

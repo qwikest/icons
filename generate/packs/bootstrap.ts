@@ -2,7 +2,7 @@ import glob from "fast-glob";
 import { definePack } from "../define-pack";
 import { extractor } from "../extractor";
 
-const extractRegex = /^.*\/(?<name>.+?)(-(?<variant>fill))?.svg/;
+const extractRegex = /^.*\/(?<name>.+?)(-(?<variant>fill))?\.svg/;
 function bootstrapExtract(path: string) {
   const baseExtractor = extractor(extractRegex, { variant: "outline" });
   const { name, variant } = baseExtractor(path);

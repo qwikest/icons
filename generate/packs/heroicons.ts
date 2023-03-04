@@ -3,7 +3,7 @@ import { definePack } from "../define-pack";
 import { extractor } from "../extractor";
 
 const extractRegex =
-  /heroicons\/(?<res>.[0-9]+)\/(?<style>.[a-z]+)\/(?<name>.+)?.svg/;
+  /heroicons\/(?<res>.[0-9]+)\/(?<style>.[a-z]+)\/(?<name>.+)?\.svg/;
 
 function heroiconsExtract(path: string) {
   const { res, style, name } = extractor(extractRegex)(path);
