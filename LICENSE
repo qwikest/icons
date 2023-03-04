@@ -12,20 +12,23 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Icons are taken from other projects. Please check each individual license for usage:
 
-Lucide: ISC
-https://github.com/lucide-icons/lucide/blob/main/LICENSE
-
-Iconoir: MIT
-https://github.com/iconoir-icons/iconoir/blob/main/LICENSE
-
-Github Octicons: MIT
-https://github.com/primer/octicons/blob/master/LICENSE
-
-Ionicons: MIT
-https://github.com/ionic-team/ionicons/blob/master/LICENSE
+Bootstrap: MIT
+https://github.com/twbs/icons/blob/main/LICENSE.md
 
 Heroicons: MIT
 https://opensource.org/licenses/MIT
 
+Iconoir: MIT
+https://github.com/iconoir-icons/iconoir/blob/main/LICENSE
+
+Ionicons: MIT
+https://github.com/ionic-team/ionicons/blob/master/LICENSE
+
+Lucide: ISC
+https://github.com/lucide-icons/lucide/blob/main/LICENSE
+
 MonoIcons: MIT
 https://github.com/mono-company/mono-icons/blob/master/LICENSE.md
+
+Github Octicons: MIT
+https://github.com/primer/octicons/blob/master/LICENSE
