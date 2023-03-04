@@ -2,8 +2,8 @@ import { mkdir, readFile, rm, writeFile } from "fs/promises";
 import { basename, dirname, join } from "path";
 import { optimize } from "svgo";
 import { AnyIconVariants, IconPackConfig } from "./config.interface";
-import { configs } from "./configs.js";
-import { downloadIcons } from "./download-icons.js";
+import { configs } from "./configs";
+import { downloadIcons } from "./download-icons";
 
 const iconLimit = process.env["ICON_LIMIT"];
 const baseOutputPath = "src/lib";

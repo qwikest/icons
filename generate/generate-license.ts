@@ -1,6 +1,6 @@
 import { execSync } from "child_process";
 import { readFile, writeFile } from "fs/promises";
-import { configs } from "./configs.js";
+import { configs } from "./configs";
 
 const baseLicense = (year: number, name: string) => `MIT License ${year} ${name}
 

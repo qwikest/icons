@@ -1,6 +1,6 @@
 import glob from "fast-glob";
-import { definePack } from "../define-pack.js";
-import { extractor } from "../extractor.js";
+import { definePack } from "../define-pack";
+import { extractor } from "../extractor";
 
 const extractRegex = /^.*\/(?<name>.+?)(-(?<variant>fill))?.svg/;
 function bootstrapExtract(path: string) {
