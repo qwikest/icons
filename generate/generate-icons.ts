@@ -31,9 +31,11 @@ function dashCase(input: string) {
 }
 
 export function camelCase(input: string) {
-  return input.replace(/(?:^|[- ])([a-z0-9])/g, (result) => {
-    return result.replace(/^[- ]/, "").toUpperCase();
-  });
+  return input
+    .replace(/(?:^|[- ])([a-z0-9])/g, (result) => {
+      return result.replace(/^[- ]/, "").toUpperCase();
+    })
+    .replace(/[0-9][a-z]/g, (match) => match.toUpperCase());
 }
 
 function getIconVariantNames(path: string, pack: IconPackConfig) {

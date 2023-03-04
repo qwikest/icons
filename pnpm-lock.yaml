@@ -16,11 +16,12 @@ specifiers:
   got: ^12.5.3
   heroicons: ^2.0.16
   ionicons: ^6.1.3
-  lucide-static: ^0.115.0
+  lucide-static: '>=0.115.0 <1.0.0'
   node-fetch: 3.3.0
   node-stream-zip: ^1.15.0
   np: 7.6.3
   prettier: 2.8.4
+  simple-icons: ^8.6.0
   svgo: ^3.0.2
   tar: ^6.1.13
   ts-node: ^10.9.1
@@ -30,6 +31,7 @@ specifiers:
   vite: 4.1.4
 
 dependencies:
+  simple-icons: 8.6.0
   tsm: 2.3.0
 
 devDependencies:
@@ -3502,6 +3504,11 @@ packages:
   /signal-exit/3.0.7:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
+
+  /simple-icons/8.6.0:
+    resolution: {integrity: sha512-A5rRhFdgsV+1LIdkzIuwa+ilYb1v+svDi1ojOcfnEXaYSsTAlYRpWcH+p0MM1XY7uIkiNJ8i9bkFRoysMbLopw==}
+    engines: {node: '>=0.12.18'}
+    dev: false
 
   /slash/3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
