@@ -71,8 +71,7 @@
     }
   },
   "files": [
-    "lib",
-    "lib-types"
+    "lib"
   ],
   "engines": {
     "node": ">=15.0.0"
@@ -84,6 +83,7 @@
   },
   "scripts": {
     "build": "qwik build",
+    "link.lib": "pnpm build.lib && pnpm link -g",
     "build.lib": "pnpm build.lib.browser && pnpm build.lib.types",
     "build.lib.browser": "vite build --mode lib",
     "build.lib.types": "tsc -p tsconfig.lib.json",
@@ -121,15 +121,15 @@
     "ts-node": "^10.9.1",
     "typescript": "4.9.5",
     "undici": "5.20.0",
-    "vite": "4.1.4"
-  },
-  "peerDependencies": {
-    "@builder.io/qwik": "^0.19.0"
-  },
-  "dependencies": {
+    "vite": "4.1.4",
     "@types/tar": "^6.1.4",
+    "bootstrap-icons": "^1.10.3",
     "got": "^12.5.3",
     "node-stream-zip": "^1.15.0",
     "tar": "^6.1.13"
-  }
+  },
+  "peerDependencies": {
+    "@builder.io/qwik": "~0.19.0"
+  },
+  "dependencies": {}
 }

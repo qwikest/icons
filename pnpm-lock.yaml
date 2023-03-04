@@ -9,6 +9,7 @@ specifiers:
   '@types/tar': ^6.1.4
   '@typescript-eslint/eslint-plugin': 5.53.0
   '@typescript-eslint/parser': 5.53.0
+  bootstrap-icons: ^1.10.3
   eslint: 8.34.0
   eslint-plugin-qwik: latest
   fast-glob: ^3.2.12
@@ -29,6 +30,7 @@ specifiers:
 
 dependencies:
   '@types/tar': 6.1.4
+  bootstrap-icons: 1.10.3
   got: 12.5.3
   node-stream-zip: 1.15.0
   tar: 6.1.13
@@ -42,7 +44,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.53.0_ny4s7qc6yg74faf3d6xty2ofzy
   '@typescript-eslint/parser': 5.53.0_7kw3g6rralp5ps6mg3uyzz6azm
   eslint: 8.34.0
-  eslint-plugin-qwik: 0.20.0_eslint@8.34.0
+  eslint-plugin-qwik: 0.20.1_eslint@8.34.0
   fast-glob: 3.2.12
   heroicons: 2.0.16
   ionicons: 6.1.3
@@ -820,6 +822,10 @@ packages:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
 
+  /bootstrap-icons/1.10.3:
+    resolution: {integrity: sha512-7Qvj0j0idEm/DdX9Q0CpxAnJYqBCFCiUI6qzSPYfERMcokVuV9Mdm/AJiVZI8+Gawe4h/l6zFcOzvV7oXCZArw==}
+    dev: false
+
   /boxen/5.1.2:
     resolution: {integrity: sha512-9gYgQKXx+1nP8mP7CzFyaUARhg7D3n1dF/FnErWmu9l6JvGpNUN278h0aSb+QjoiKSWG+iZ3uHrcqk0qrY9RQQ==}
     engines: {node: '>=10'}
@@ -1375,8 +1381,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-qwik/0.20.0_eslint@8.34.0:
-    resolution: {integrity: sha512-W/6ZPVjiNpiUE91GvfBgzVaCZmzUfcZDoH+uGWmU9Hl4Avs8Y0vUvIm/607wozbd1ofLQdJgl/+MuPnZK+a2xw==}
+  /eslint-plugin-qwik/0.20.1_eslint@8.34.0:
+    resolution: {integrity: sha512-A5tNrtxakpBn64RmMfneu8WaIeDblWHHImTfuwOomFL18Pm5CT9DqsZ1nM0M3yvVcHxeav/avqYLsezKS4zfRw==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>= 8'

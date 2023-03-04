@@ -24,6 +24,20 @@ export function extractor<Variants extends Record<string, string>>(
 
 export const configs = [
   definePack({
+    name: "Bootstrap",
+    prefix: "Bs",
+    variants: {},
+    defaultVariants: {},
+    contents: {
+      files: glob("node_modules/bootstrap-icons/icons/*.svg"),
+      extract: extractor(/^.*\/(?<name>.+?).svg/),
+    },
+    projectUrl: "https://icons.getbootstrap.com/",
+    license: "MIT",
+    licenseUrl: "https://github.com/twbs/icons/blob/main/LICENSE.md",
+    coloring: "keep",
+  }),
+  definePack({
     name: "Lucide",
     prefix: "Lu",
     variants: {},
