@@ -22,6 +22,11 @@
       "require": "./lib/index.cjs",
       "types": "./lib/utils/index.d.ts"
     },
+    "./bootstrap": {
+      "import": "./lib/bs.mjs",
+      "require": "./lib/bs.cjs",
+      "types": "./lib/lib/bs/bs.d.ts"
+    },
     "./octicons": {
       "import": "./lib/go.mjs",
       "require": "./lib/go.cjs",
@@ -50,6 +55,9 @@
   },
   "typesVersions": {
     "*": {
+      "bootstrap": [
+        "./lib/lib/bs/bs.d.ts"
+      ],
       "octicons": [
         "./lib/lib/go/go.d.ts"
       ],
@@ -95,10 +103,10 @@
     "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.lib.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "generate-icons": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-5-icons": "export ICON_LIMIT=5 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-50-icons": "export ICON_LIMIT=50 && pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-icons.ts",
-    "generate-license": "pnpm ts-node-esm -P generate/tsconfig.json ./generate/generate-license.ts"
+    "generate-icons": "pnpm tsm ./generate/generate-icons.ts",
+    "generate-5-icons": "export ICON_LIMIT=5 && pnpm tsm ./generate/generate-icons.ts",
+    "generate-50-icons": "export ICON_LIMIT=50 && pnpm tsm ./generate/generate-icons.ts",
+    "generate-license": "pnpm tsm ./generate/generate-license.ts"
   },
   "devDependencies": {
     "@builder.io/qwik": "0.19.2",
@@ -106,30 +114,32 @@
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
     "@types/node-fetch": "latest",
+    "@types/tar": "^6.1.4",
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
+    "bootstrap-icons": "^1.10.3",
     "eslint": "8.34.0",
     "eslint-plugin-qwik": "latest",
     "fast-glob": "^3.2.12",
+    "got": "^12.5.3",
     "heroicons": "^2.0.16",
     "ionicons": "^6.1.3",
     "lucide-static": "^0.115.0",
     "node-fetch": "3.3.0",
+    "node-stream-zip": "^1.15.0",
     "np": "7.6.3",
     "prettier": "2.8.4",
     "svgo": "^3.0.2",
+    "tar": "^6.1.13",
     "ts-node": "^10.9.1",
     "typescript": "4.9.5",
     "undici": "5.20.0",
-    "vite": "4.1.4",
-    "@types/tar": "^6.1.4",
-    "bootstrap-icons": "^1.10.3",
-    "got": "^12.5.3",
-    "node-stream-zip": "^1.15.0",
-    "tar": "^6.1.13"
+    "vite": "4.1.4"
   },
   "peerDependencies": {
     "@builder.io/qwik": "~0.19.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "tsm": "^2.3.0"
+  }
 }
