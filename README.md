@@ -11,7 +11,8 @@ Currently included libraries (with icon prefix):
 - `Io`: [Ionicons](https://ionic.io/ionicons) by Ionic
 - `Lu`: [Lucide](https://lucide.dev/) [superset of feather icons]
 - `Mo`: [Mono Icons](https://icons.mono.company/)
-- `Mo`: [Simple icons](https://simpleicons.org/) [icons for popular brands]
+- `Si`: [Simple Icons](https://simpleicons.org/) [icons for popular brands]
+- `Tb`: [Tabler Icons](https://tabler-icons.io/)
 
 ## Installation
 
@@ -71,6 +72,7 @@ import { IoAirplane, .. } from "@qwikest/icons/ionicons";
 import { LuRocket, .. } from "@qwikest/icons/lucide";
 import { MoAdd, .. } from "@qwikest/icons/mono-icons";
 import { Si1Password, .. } from "@qwikest/icons/simpleicons";
+import { Tb123, .. } from "@qwikest/icons/tablericons";
 ```
 
 > **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝
