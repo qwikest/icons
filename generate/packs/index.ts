@@ -6,3 +6,4 @@ export * from "./lucide";
 export * from "./monoicons";
 export * from "./octicons";
 export * from "./simpleicons";
+export * from "./tabler";

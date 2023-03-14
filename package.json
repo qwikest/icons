@@ -56,6 +56,11 @@
       "import": "./lib/si.mjs",
       "require": "./lib/si.cjs",
       "types": "./lib/lib/si/si.d.ts"
+    },
+    "./tablericons": {
+      "import": "./lib/tb.mjs",
+      "require": "./lib/tb.cjs",
+      "types": "./lib/lib/tb/tb.d.ts"
     }
   },
   "typesVersions": {
@@ -80,6 +85,9 @@
       ],
       "simpleicons": [
         "./lib/lib/si/si.d.ts"
+      ],
+      "tablericons": [
+        "./lib/lib/tb/tb.d.ts"
       ],
       "*": [
         "./lib/utils/index.d.ts"
