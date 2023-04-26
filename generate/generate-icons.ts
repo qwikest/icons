@@ -156,7 +156,7 @@ async function generateIcon(icon: GenerateIcon, pack: IconPackConfig) {
       },`
     ),
     "]",
-    `export const ${symbolName} = component$(({ ${variantKeys
+    `export const ${symbolName} = component$(({ ${[...variantKeys, "key"]
       .map((key) => key + ",")
       .join(" ")} ...props}: IconProps & ${propsTypeName}) => {`,
     iconDefinition,

@@ -15,7 +15,7 @@ export default defineConfig(() => {
         ],
         formats: ["es", "cjs"],
         fileName: (format, entry) =>
-          `${entry}.${format === "es" ? "mjs" : "cjs"}`,
+          `${entry}.qwik.${format === "es" ? "mjs" : "cjs"}`,
       },
     },
     plugins: [qwikVite()],

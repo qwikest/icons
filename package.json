@@ -18,48 +18,48 @@
   ],
   "exports": {
     ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
       "types": "./lib/utils/index.d.ts"
     },
     "./bootstrap": {
-      "import": "./lib/bs.mjs",
-      "require": "./lib/bs.cjs",
+      "import": "./lib/bs.qwik.mjs",
+      "require": "./lib/bs.qwik.cjs",
       "types": "./lib/lib/bs/bs.d.ts"
     },
     "./octicons": {
-      "import": "./lib/go.mjs",
-      "require": "./lib/go.cjs",
+      "import": "./lib/go.qwik.mjs",
+      "require": "./lib/go.qwik.cjs",
       "types": "./lib/lib/go/go.d.ts"
     },
     "./heroicons": {
-      "import": "./lib/hi.mjs",
-      "require": "./lib/hi.cjs",
+      "import": "./lib/hi.qwik.mjs",
+      "require": "./lib/hi.qwik.cjs",
       "types": "./lib/lib/hi/hi.d.ts"
     },
     "./iconoir": {
-      "import": "./lib/in.mjs",
-      "require": "./lib/in.cjs",
+      "import": "./lib/in.qwik.mjs",
+      "require": "./lib/in.qwik.cjs",
       "types": "./lib/lib/in/in.d.ts"
     },
     "./ionicons": {
-      "import": "./lib/io.mjs",
-      "require": "./lib/io.cjs",
+      "import": "./lib/io.qwik.mjs",
+      "require": "./lib/io.qwik.cjs",
       "types": "./lib/lib/io/io.d.ts"
     },
     "./lucide": {
-      "import": "./lib/lu.mjs",
-      "require": "./lib/lu.cjs",
+      "import": "./lib/lu.qwik.mjs",
+      "require": "./lib/lu.qwik.cjs",
       "types": "./lib/lib/lu/lu.d.ts"
     },
     "./simpleicons": {
-      "import": "./lib/si.mjs",
-      "require": "./lib/si.cjs",
+      "import": "./lib/si.qwik.mjs",
+      "require": "./lib/si.qwik.cjs",
       "types": "./lib/lib/si/si.d.ts"
     },
     "./tablericons": {
-      "import": "./lib/tb.mjs",
-      "require": "./lib/tb.cjs",
+      "import": "./lib/tb.qwik.mjs",
+      "require": "./lib/tb.qwik.cjs",
       "types": "./lib/lib/tb/tb.d.ts"
     }
   },
@@ -126,7 +126,7 @@
     "generate-license": "pnpm tsm ./generate/generate-license.ts"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.19.2",
+    "@builder.io/qwik": "0.103.0",
     "@primer/octicons": "^17.12.0",
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
