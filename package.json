@@ -126,7 +126,7 @@
     "generate-license": "pnpm tsm ./generate/generate-license.ts"
   },
   "devDependencies": {
-    "@builder.io/qwik": "0.103.0",
+    "@builder.io/qwik": "^1.0.0",
     "@primer/octicons": "^17.12.0",
     "@types/eslint": "8.21.1",
     "@types/node": "^18.14.0",
@@ -154,7 +154,7 @@
     "vite": "4.1.4"
   },
   "peerDependencies": {
-    "@builder.io/qwik": ">=0.19.0 <1.0.0"
+    "@builder.io/qwik": ">=1.0.0"
   },
   "dependencies": {
     "simple-icons": "^8.6.0",
