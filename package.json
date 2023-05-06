@@ -22,6 +22,11 @@
       "require": "./lib/index.qwik.cjs",
       "types": "./lib/utils/index.d.ts"
     },
+    "./boxicons": {
+      "import": "./lib/bi.qwik.mjs",
+      "require": "./lib/bi.qwik.cjs",
+      "types": "./lib/lib/bi/bi.d.ts"
+    },
     "./bootstrap": {
       "import": "./lib/bs.qwik.mjs",
       "require": "./lib/bs.qwik.cjs",
@@ -65,6 +70,9 @@
   },
   "typesVersions": {
     "*": {
+      "boxicons": [
+        "./lib/lib/bi/bi.d.ts"
+      ],
       "bootstrap": [
         "./lib/lib/bs/bs.d.ts"
       ],
