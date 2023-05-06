@@ -2,7 +2,7 @@ import glob from "fast-glob";
 import { definePack } from "../define-pack";
 import { extractor } from "../extractor";
 
-const extractRegex = /^.*\/(?<variant>.+?)\/(?<name>.+?)\.svg/;
+const extractRegex = /^.*\/(?<variant>.+?)\/(bxs-|bxl-|bx-)(?<name>.+?)\.svg/;
 function boxIconExtract(path: string) {
   const baseExtractor = extractor(extractRegex, { variant: "regular" });
   const { name, variant } = baseExtractor(path);
@@ -15,7 +15,7 @@ function boxIconExtract(path: string) {
 
 export const boxIconsPack = definePack({
   name: "BoxIcons",
-  prefix: "Bi",
+  prefix: "Bx",
   variants: {
     variant: ["outline", "solid"],
   },
@@ -27,7 +27,7 @@ export const boxIconsPack = definePack({
     folder: "boxicons-master/svg",
   },
   contents: {
-    files: glob("download/MonoIcons/*.svg"),
+    files: glob("download/BoxIcons/*/*.svg"),
     extract: boxIconExtract,
   },
   projectUrl: "https://boxicons.com/",
