@@ -27,7 +27,7 @@ pnpm add @qwikest/icons
 ## Usage
 
 ```tsx
-import { LuRocket } from "@qwikest/icons/lucide";
+import { LuRocket } from "@qwikest/icons";
 
 export const MyComponent = component$(() => {
   // Icon size and color are inherited by default ⬇️
@@ -39,40 +39,18 @@ export const MyComponent = component$(() => {
 });
 ```
 
-## Variants
-
-A few libraries support different icon variants.
-They can be configured via `useContext` or directly via props.
-Feel free to use the context to specify a global default 🙏
-
-```ts
-export const MyComponent = component$(() => {
-  useContextProvider(IoContext, { variant: "outline" });
-
-  // IoAccessibility will infer `variant: outline` ⬇️
-  return (
-    <div>
-      <IoAccessibility />
-      <IoAddCircle variant="sharp" />
-    </div>
-  );
-});
-```
-
-> Some libraries like `Octicons` even support different viewBoxes. Use the `res` property to specify them. Each icon library comes with a props type (like `LuProps`) which contains all possible variants!
-
 ## Available Libraries
 
 ```tsx
-import { Bs1Circle, .. } from "@qwikest/icons/bootstrap";
-import { GoFlame24, .. } from "@qwikest/icons/octicons";
-import { HiAcademicCapMini, .. } from "@qwikest/icons/heroicons";
-import { In1stMedal, .. } from "@qwikest/icons/iconoir";
-import { IoAirplane, .. } from "@qwikest/icons/ionicons";
-import { LuRocket, .. } from "@qwikest/icons/lucide";
-import { MoAdd, .. } from "@qwikest/icons/mono-icons";
-import { Si1Password, .. } from "@qwikest/icons/simpleicons";
-import { Tb123, .. } from "@qwikest/icons/tablericons";
+import { Bs1Circle, .. } from "@qwikest/icons";
+import { GoFlame24, .. } from "@qwikest/icons";
+import { HiAcademicCapMini, .. } from "@qwikest/icons";
+import { In1stMedal, .. } from "@qwikest/icons";
+import { IoAirplane, .. } from "@qwikest/icons";
+import { LuRocket, .. } from "@qwikest/icons";
+import { MoAdd, .. } from "@qwikest/icons";
+import { Si1Password, .. } from "@qwikest/icons";
+import { Tb123, .. } from "@qwikest/icons";
 ```
 
 > **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝

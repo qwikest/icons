@@ -40,6 +40,8 @@ lerna-debug.log*
 # Generated Output
 src/lib/*
 !src/lib/.gitkeep
+src/icons/*
+!src/icons/.gitkeep
 src/page/*
 !src/page/.gitkeep
 download

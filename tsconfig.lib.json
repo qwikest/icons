@@ -6,5 +6,5 @@
     "emitDeclarationOnly": true,
     "incremental": false
   },
-  "include": ["src/lib", "src/utils"]
+  "include": ["src/entry.lib.ts"]
 }

@@ -1,4 +1,4 @@
-export type AnyIconVariants = Record<string, string>;
+export type AnyIconVariants = { variant?: string };
 
 export interface IconPackDownload {
   zip: string;

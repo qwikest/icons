@@ -16,89 +16,65 @@
     "ionicons",
     "heroicons"
   ],
+  "main": "./lib/index.qwik.mjs",
+  "qwik": "./lib/index.qwik.mjs",
+  "types": "./lib/entry.lib.d.ts",
   "exports": {
     ".": {
       "import": "./lib/index.qwik.mjs",
       "require": "./lib/index.qwik.cjs",
-      "types": "./lib/utils/index.d.ts"
+      "types": "./lib/entry.lib.d.ts"
     },
     "./boxicons": {
-      "import": "./lib/bi.qwik.mjs",
-      "require": "./lib/bi.qwik.cjs",
-      "types": "./lib/lib/bi/bi.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./bootstrap": {
-      "import": "./lib/bs.qwik.mjs",
-      "require": "./lib/bs.qwik.cjs",
-      "types": "./lib/lib/bs/bs.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./octicons": {
-      "import": "./lib/go.qwik.mjs",
-      "require": "./lib/go.qwik.cjs",
-      "types": "./lib/lib/go/go.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./heroicons": {
-      "import": "./lib/hi.qwik.mjs",
-      "require": "./lib/hi.qwik.cjs",
-      "types": "./lib/lib/hi/hi.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./iconoir": {
-      "import": "./lib/in.qwik.mjs",
-      "require": "./lib/in.qwik.cjs",
-      "types": "./lib/lib/in/in.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./ionicons": {
-      "import": "./lib/io.qwik.mjs",
-      "require": "./lib/io.qwik.cjs",
-      "types": "./lib/lib/io/io.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./lucide": {
-      "import": "./lib/lu.qwik.mjs",
-      "require": "./lib/lu.qwik.cjs",
-      "types": "./lib/lib/lu/lu.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./simpleicons": {
-      "import": "./lib/si.qwik.mjs",
-      "require": "./lib/si.qwik.cjs",
-      "types": "./lib/lib/si/si.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     },
     "./tablericons": {
-      "import": "./lib/tb.qwik.mjs",
-      "require": "./lib/tb.qwik.cjs",
-      "types": "./lib/lib/tb/tb.d.ts"
+      "import": "./lib/index.qwik.mjs",
+      "require": "./lib/index.qwik.cjs",
+      "types": "./lib/entry.lib.d.ts"
     }
   },
   "typesVersions": {
     "*": {
-      "boxicons": [
-        "./lib/lib/bi/bi.d.ts"
-      ],
-      "bootstrap": [
-        "./lib/lib/bs/bs.d.ts"
-      ],
-      "octicons": [
-        "./lib/lib/go/go.d.ts"
-      ],
-      "heroicons": [
-        "./lib/lib/hi/hi.d.ts"
-      ],
-      "iconoir": [
-        "./lib/lib/in/in.d.ts"
-      ],
-      "ionicons": [
-        "./lib/lib/io/io.d.ts"
-      ],
-      "lucide": [
-        "./lib/lib/lu/lu.d.ts"
-      ],
-      "simpleicons": [
-        "./lib/lib/si/si.d.ts"
-      ],
-      "tablericons": [
-        "./lib/lib/tb/tb.d.ts"
-      ],
       "*": [
-        "./lib/utils/index.d.ts"
+        "./lib/entry.lib.d.ts"
       ]
     }
   },
@@ -118,7 +94,7 @@
     "link.lib": "pnpm build.lib && pnpm link -g",
     "build.lib": "pnpm build.lib.browser && pnpm build.lib.types",
     "build.lib.browser": "vite build --mode lib",
-    "build.lib.types": "tsc -p tsconfig.lib.json && pnpm simplify-types",
+    "build.lib.types": "tsc -p tsconfig.lib.json",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
@@ -127,7 +103,6 @@
     "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.lib.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
     "qwik": "qwik",
-    "simplify-types": "pnpm tsm ./generate/simplify-types.ts",
     "generate-icons": "pnpm tsm ./generate/generate-icons.ts",
     "generate-5-icons": "export ICON_LIMIT=5 && pnpm tsm ./generate/generate-icons.ts",
     "generate-50-icons": "export ICON_LIMIT=50 && pnpm tsm ./generate/generate-icons.ts",
