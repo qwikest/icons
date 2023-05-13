@@ -27,7 +27,7 @@ pnpm add @qwikest/icons
 ## Usage
 
 ```tsx
-import { LuRocket } from "@qwikest/icons";
+import { LuRocket } from "@qwikest/icons/lucide";
 
 export const MyComponent = component$(() => {
   // Icon size and color are inherited by default ⬇️
@@ -42,15 +42,15 @@ export const MyComponent = component$(() => {
 ## Available Libraries
 
 ```tsx
-import { Bs1Circle, .. } from "@qwikest/icons";
-import { GoFlame24, .. } from "@qwikest/icons";
-import { HiAcademicCapMini, .. } from "@qwikest/icons";
-import { In1stMedal, .. } from "@qwikest/icons";
-import { IoAirplane, .. } from "@qwikest/icons";
-import { LuRocket, .. } from "@qwikest/icons";
-import { MoAdd, .. } from "@qwikest/icons";
-import { Si1Password, .. } from "@qwikest/icons";
-import { Tb123, .. } from "@qwikest/icons";
+import { Bs1Circle } from "@qwikest/icons/bootstrap";
+import { HiAcademicCapMini } from "@qwikest/icons/heroicons";
+import { In1StMedal } from "@qwikest/icons/iconoir";
+import { IoAirplaneOutline } from "@qwikest/icons/ionicons";
+import { LuRocket } from "@qwikest/icons/lucide";
+import { MoAdd } from "@qwikest/icons/monoicons";
+import { GoFlame24 } from "@qwikest/icons/octicons";
+import { Si1Password } from "@qwikest/icons/simpleicons";
+import { Tb123 } from "@qwikest/icons/tablericons";
 ```
 
 > **Missing a library?** Feel free to [open an issue](https://github.com/qwikest/icons/issues/new?title=Add%20Icon%20Pack:) or even a MR 🤝

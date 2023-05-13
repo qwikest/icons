@@ -46,6 +46,7 @@ function getIconVariantNames(path: string, pack: IconPackConfig) {
   }
 
   const variantSuffix = Object.values(variants)
+    .filter(Boolean)
     .map((value) => "-" + value)
     .join("");
   const formatted = pack.prefix + camelCase(name) + variantSuffix;
