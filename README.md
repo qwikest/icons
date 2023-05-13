@@ -26,6 +26,8 @@ pnpm add @qwikest/icons
 
 ## Usage
 
+> If you want to, you can also directly start playing around with the package in this [code sandbox](https://codesandbox.io/p/sandbox/keen-knuth-pni4bo?file=%2Fsrc%2Froutes%2Findex.tsx%3A7%2C11) – no setup needed 👀
+
 ```tsx
 import { LuRocket } from "@qwikest/icons/lucide";
 
