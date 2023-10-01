@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## 0.0.9
 
+### Added
+
+- New icons from all packages available.
+
+## 0.0.9
+
 ### Fixed
 
 - SSR should now work and `Duplicate implementations of JSXNode` errors should be gone.

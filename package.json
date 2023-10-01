@@ -161,7 +161,7 @@
     "bootstrap-icons": "^1.10.3",
     "heroicons": "^2.0.18",
     "ionicons": "^7.1.2",
-    "lucide-static": ">=0.297.0 <1.0.0"
+    "lucide-static": ">=0.279.0 <1.0.0"
   },
   "peerDependencies": {
     "@builder.io/qwik": ">=1.0.0"
