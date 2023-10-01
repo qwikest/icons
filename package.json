@@ -17,6 +17,7 @@
     "heroicons"
   ],
   "types": "./lib/utils/index.d.ts",
+  "qwik": "./lib/entry.lib.qwik.mjs",
   "exports": {
     ".": {
       "import": "./lib/entry.lib.qwik.mjs",
@@ -116,22 +117,23 @@
   },
   "scripts": {
     "build": "qwik build",
-    "link.lib": "pnpm build.lib && pnpm link -g",
     "build.lib": "pnpm build.lib.browser && pnpm build.lib.types",
     "build.lib.browser": "vite build --mode lib",
     "build.lib.types": "tsc -p tsconfig.lib.json",
+    "build.server": "vite build -c adapters/static/vite.config.ts",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
+    "generate-5-icons": "export ICON_LIMIT=5 && pnpm tsm ./generate/generate-icons.ts",
+    "generate-50-icons": "export ICON_LIMIT=50 && pnpm tsm ./generate/generate-icons.ts",
+    "generate-icons": "pnpm tsm ./generate/generate-icons.ts",
+    "generate-license": "pnpm tsm ./generate/generate-license.ts",
+    "link.lib": "pnpm build.lib && pnpm link -g",
     "lint": "eslint \"src/**/*.ts*\"",
     "release": "pnpm generate-icons && pnpm generate-license && pnpm build.lib && pnpm build.lib.types && pnpm np --yolo",
     "start": "vite --open --mode ssr",
-    "qwik": "qwik",
-    "generate-icons": "pnpm tsm ./generate/generate-icons.ts",
-    "generate-5-icons": "export ICON_LIMIT=5 && pnpm tsm ./generate/generate-icons.ts",
-    "generate-50-icons": "export ICON_LIMIT=50 && pnpm tsm ./generate/generate-icons.ts",
-    "generate-license": "pnpm tsm ./generate/generate-license.ts"
+    "qwik": "qwik"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.0.0",
@@ -142,14 +144,10 @@
     "@types/tar": "^6.1.4",
     "@typescript-eslint/eslint-plugin": "5.53.0",
     "@typescript-eslint/parser": "5.53.0",
-    "bootstrap-icons": "^1.10.3",
-    "eslint": "8.34.0",
+    "eslint": "8.50.0",
     "eslint-plugin-qwik": "latest",
     "fast-glob": "^3.2.12",
     "got": "^12.5.3",
-    "heroicons": "^2.0.16",
-    "ionicons": "^6.1.3",
-    "lucide-static": ">=0.115.0 <1.0.0",
     "node-fetch": "3.3.0",
     "node-stream-zip": "^1.15.0",
     "np": "7.6.3",
@@ -159,7 +157,11 @@
     "ts-node": "^10.9.1",
     "typescript": "4.9.5",
     "undici": "5.20.0",
-    "vite": "4.1.4"
+    "vite": "4.1.4",
+    "bootstrap-icons": "^1.10.3",
+    "heroicons": "^2.0.18",
+    "ionicons": "^7.1.2",
+    "lucide-static": ">=0.297.0 <1.0.0"
   },
   "peerDependencies": {
     "@builder.io/qwik": ">=1.0.0"
