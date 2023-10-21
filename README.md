@@ -5,6 +5,7 @@ Include popular icons easily in your Qwik projects with `@qwikest/icons` 🚀
 Currently included libraries (with icon prefix):
 
 - `Bs`: [Bootstrap Icons](https://icons.getbootstrap.com/)
+- `Fl`: [Flowbite Icons](https://flowbite.com/icons/)
 - `Go`: [Octicons](https://primer.style/design/foundations/icons/) by GitHub
 - `Hi`: [Heroicons](https://heroicons.com/) by Tailwind
 - `In`: [Iconoir](https://iconoir.com/)
@@ -46,6 +47,7 @@ export const MyComponent = component$(() => {
 
 ```tsx
 import { Bs1Circle } from "@qwikest/icons/bootstrap";
+import { FlAdressBookSolid } from "@qwikest/icons/flowbite";
 import { HiAcademicCapMini } from "@qwikest/icons/heroicons";
 import { In1StMedal } from "@qwikest/icons/iconoir";
 import { IoAirplaneOutline } from "@qwikest/icons/ionicons";
