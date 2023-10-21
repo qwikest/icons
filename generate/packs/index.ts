@@ -1,5 +1,6 @@
 export * from "./bootstrap";
 export * from "./flowbite";
+export * from "./font-awesome-free";
 // Box icon support isn't fully functional yet:
 // export * from "./boxicons";
 export * from "./heroicons";

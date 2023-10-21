@@ -74,6 +74,7 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
 
   const optimized = optimize(replaced, {
     plugins: [
+      "removeComments",
       "removeDimensions",
       {
         name: "addAttributesToSVGElement",
@@ -92,7 +93,8 @@ async function generateIconVariant(file: string, pack: IconPackConfig) {
   const svgElement = optimized
     .match(/<svg[\w\W]*<\/svg>/gm)
     ?.toString()
-    .replace(">", ` {...props} >`);
+    .replace(">", ` {...props} >`)
+    .replace(/<!--.*?-->/g, "");
 
   const fileContent = [
     `export const ${names.camelCase} = (props) =>`,
@@ -136,7 +138,7 @@ async function generateIcons(pack: IconPackConfig) {
 
   const indexDeclarationContent = [
     "import type { JSXNode } from '@builder.io/qwik';",
-    "import { IconProps } from '../../utils';",
+    "import type { IconProps } from '../../utils';",
     ...variantsResult.map(
       (variant) =>
         `export declare const ${variant.symbolName}: (props: IconProps) => JSXNode;`

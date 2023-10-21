@@ -39,6 +39,11 @@
       "require": "./lib/fl.qwik.cjs",
       "types": "./lib/icons/fl/fl.d.ts"
     },
+    "./font-awesome": {
+      "import": "./lib/fa.qwik.mjs",
+      "require": "./lib/fa.qwik.cjs",
+      "types": "./lib/icons/fa/fa.d.ts"
+    },
     "./heroicons": {
       "import": "./lib/hi.qwik.mjs",
       "require": "./lib/hi.qwik.cjs",
@@ -90,6 +95,9 @@
       ],
       "flowbite": [
         "./lib/icons/fl/fl.d.ts"
+      ],
+      "font-awesome": [
+        "./lib/icons/fa/fa.d.ts"
       ],
       "octicons": [
         "./lib/icons/go/go.d.ts"
