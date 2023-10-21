@@ -19,7 +19,7 @@ export const materialIconsPack = definePack({
     extract: extractor(/^.*\/(?<variant>.+?)\/(?<name>.+?).svg/),
   },
   projectUrl: "https://github.com/google/material-design-icons",
-  license: "MIT",
+  license: "Apache 2.0",
   licenseUrl:
     "https://github.com/google/material-design-icons/blob/master/LICENSE",
   coloring: "fill",
