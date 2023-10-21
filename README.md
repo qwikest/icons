@@ -11,6 +11,7 @@ Currently included libraries (with icon prefix):
 - `Io`: [Ionicons](https://ionic.io/ionicons) by Ionic
 - `Lu`: [Lucide](https://lucide.dev/) [superset of feather icons]
 - `Mo`: [Mono Icons](https://icons.mono.company/)
+- `Mat`: [Material Icons](https://github.com/google/material-design-icons)
 - `Si`: [Simple Icons](https://simpleicons.org/) [icons for popular brands]
 - `Tb`: [Tabler Icons](https://tabler-icons.io/)
 
@@ -49,6 +50,7 @@ import { HiAcademicCapMini } from "@qwikest/icons/heroicons";
 import { In1StMedal } from "@qwikest/icons/iconoir";
 import { IoAirplaneOutline } from "@qwikest/icons/ionicons";
 import { LuRocket } from "@qwikest/icons/lucide";
+import { MatGifBoxSharp } from "@qwikest/icons/material";
 import { MoAdd } from "@qwikest/icons/monoicons";
 import { GoFlame24 } from "@qwikest/icons/octicons";
 import { Si1Password } from "@qwikest/icons/simpleicons";
