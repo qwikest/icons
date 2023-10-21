@@ -32,8 +32,8 @@ function dashCase(input: string) {
 
 export function camelCase(input: string) {
   return input
-    .replace(/(?:^|[- ])([a-z0-9])/g, (result) => {
-      return result.replace(/^[- ]/, "").toUpperCase();
+    .replace(/(?:^|[- _])([a-z0-9])/g, (result) => {
+      return result.replace(/^[- _]/, "").toUpperCase();
     })
     .replace(/[0-9][a-z]/g, (match) => match.toUpperCase());
 }

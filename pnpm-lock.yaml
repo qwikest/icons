@@ -4,21 +4,13 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  simple-icons:
-    specifier: ^8.6.0
-    version: 8.6.0
-  tsm:
-    specifier: ^2.3.0
-    version: 2.3.0
-
 devDependencies:
   '@builder.io/qwik':
-    specifier: ^1.0.0
-    version: 1.0.0(undici@5.20.0)
+    specifier: ^1.2.14
+    version: 1.2.14(undici@5.20.0)
   '@primer/octicons':
-    specifier: ^17.12.0
-    version: 17.12.0
+    specifier: ^19.8.0
+    version: 19.8.0
   '@types/eslint':
     specifier: 8.21.1
     version: 8.21.1
@@ -27,7 +19,7 @@ devDependencies:
     version: 18.14.1
   '@types/node-fetch':
     specifier: latest
-    version: 2.6.4
+    version: 2.6.7
   '@types/tar':
     specifier: ^6.1.4
     version: 6.1.4
@@ -38,14 +30,14 @@ devDependencies:
     specifier: 5.53.0
     version: 5.53.0(eslint@8.50.0)(typescript@4.9.5)
   bootstrap-icons:
-    specifier: ^1.10.3
-    version: 1.10.3
+    specifier: ^1.11.1
+    version: 1.11.1
   eslint:
     specifier: 8.50.0
     version: 8.50.0
   eslint-plugin-qwik:
     specifier: latest
-    version: 1.2.12(eslint@8.50.0)
+    version: 1.2.14(eslint@8.50.0)
   fast-glob:
     specifier: ^3.2.12
     version: 3.2.12
@@ -56,11 +48,11 @@ devDependencies:
     specifier: ^2.0.18
     version: 2.0.18
   ionicons:
-    specifier: ^7.1.2
-    version: 7.1.2
+    specifier: ^7.2.1
+    version: 7.2.1
   lucide-static:
-    specifier: '>=0.279.0 <1.0.0'
-    version: 0.279.0
+    specifier: '>=0.288.0 <1.0.0'
+    version: 0.288.0
   node-fetch:
     specifier: 3.3.0
     version: 3.3.0
@@ -73,6 +65,9 @@ devDependencies:
   prettier:
     specifier: 2.8.4
     version: 2.8.4
+  simple-icons:
+    specifier: ^9.18.0
+    version: 9.18.0
   svgo:
     specifier: ^3.0.2
     version: 3.0.2
@@ -82,6 +77,9 @@ devDependencies:
   ts-node:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@18.14.1)(typescript@4.9.5)
+  tsm:
+    specifier: ^2.3.0
+    version: 2.3.0
   typescript:
     specifier: 4.9.5
     version: 4.9.5
@@ -120,13 +118,14 @@ packages:
       js-tokens: 4.0.0
     dev: true
 
-  /@builder.io/qwik@1.0.0(undici@5.20.0):
-    resolution: {integrity: sha512-U1eTIKTBUiW2dbPMCaTzS7K1bMCI9ovtfsvdduwnVThGXRSrX+v2X4U/UmHHPzfOjC55X5wYLc17cw5EwFBVVA==}
+  /@builder.io/qwik@1.2.14(undici@5.20.0):
+    resolution: {integrity: sha512-z+NFSNrAKjCVV/9d2f50Y/AthcHdlH4Hbltyjjl/0wOv4FUR3F/Ke9wz9eIhDYQ6rzFqzdav2/yTiip05El1zA==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     hasBin: true
     peerDependencies:
       undici: ^5.14.0
     dependencies:
+      csstype: 3.1.2
       undici: 5.20.0
     dev: true
 
@@ -152,7 +151,7 @@ packages:
     cpu: [arm]
     os: [android]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@esbuild/android-arm@0.16.17:
@@ -242,7 +241,7 @@ packages:
     cpu: [loong64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /@esbuild/linux-loong64@0.16.17:
@@ -447,8 +446,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@primer/octicons@17.12.0:
-    resolution: {integrity: sha512-r13VTHQ7kZmqKtMQa8lfdpr0ocqdMOYGiDWuUrIeBCq+V87u6oasbuRxy5A3y8oLxW0QXmnISr9DPT5ybAoadA==}
+  /@primer/octicons@19.8.0:
+    resolution: {integrity: sha512-Imze/fyW41Io5fN+27T5EAeXJrgBjMbz6nzU+wYbRylXvIAjLPUvaJPVoStiFlgSU+TjTUJqg5A9rgMDzTyMCg==}
     dependencies:
       object-assign: 4.1.1
     dev: true
@@ -491,9 +490,9 @@ packages:
     engines: {node: '>=14.16'}
     dev: true
 
-  /@stencil/core@2.22.2:
-    resolution: {integrity: sha512-r+vbxsGNcBaV1VDOYW25lv4QfXTlNoIb5GpUX7rZ+cr59yqYCZC5tlV+IzX6YgHKW62ulCc9M3RYtTfHtNbNNw==}
-    engines: {node: '>=12.10.0', npm: '>=6.0.0'}
+  /@stencil/core@4.5.0:
+    resolution: {integrity: sha512-XRbHdb9t4SQzCCbF9qsh0dexvnlArEzCDJl19BJzxzazVBM398SeJUKCBh4p91AZIWveN0gHuZSIGMhLWR7qSA==}
+    engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
     dev: true
 
@@ -577,11 +576,11 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/node-fetch@2.6.4:
-    resolution: {integrity: sha512-1ZX9fcN4Rvkvgv4E6PAY5WXUFWFcRWxZa3EW83UjycOB9ljJCedb2CupIP4RZMEwF/M3eTcCihbBRgwtGbg5Rg==}
+  /@types/node-fetch@2.6.7:
+    resolution: {integrity: sha512-lX17GZVpJ/fuCjguZ5b3TjEbSENxmEk1B2z02yoXSK9WMEWRivhdSY73wWMn6bpcCDAOh6qAdktpKHIlkDk2lg==}
     dependencies:
       '@types/node': 18.14.1
-      form-data: 3.0.1
+      form-data: 4.0.0
     dev: true
 
   /@types/node@18.14.1:
@@ -953,8 +952,8 @@ packages:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
 
-  /bootstrap-icons@1.10.3:
-    resolution: {integrity: sha512-7Qvj0j0idEm/DdX9Q0CpxAnJYqBCFCiUI6qzSPYfERMcokVuV9Mdm/AJiVZI8+Gawe4h/l6zFcOzvV7oXCZArw==}
+  /bootstrap-icons@1.11.1:
+    resolution: {integrity: sha512-F0DDp7nKUX+x/QtpfRZ+XHFya60ng9nfdpdS59vDDfs4Uhuxp7zym/QavMsu/xx51txkoM9eVmpE7D08N35blw==}
     dev: true
 
   /boxen@5.1.2:
@@ -1288,6 +1287,10 @@ packages:
       css-tree: 2.2.1
     dev: true
 
+  /csstype@3.1.2:
+    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
+    dev: true
+
   /data-uri-to-buffer@4.0.1:
     resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
     engines: {node: '>= 12'}
@@ -1562,7 +1565,7 @@ packages:
     cpu: [x64]
     os: [android]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-android-arm64@0.15.18:
@@ -1571,7 +1574,7 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-darwin-64@0.15.18:
@@ -1580,7 +1583,7 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-darwin-arm64@0.15.18:
@@ -1589,7 +1592,7 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-freebsd-64@0.15.18:
@@ -1598,7 +1601,7 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-freebsd-arm64@0.15.18:
@@ -1607,7 +1610,7 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-32@0.15.18:
@@ -1616,7 +1619,7 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-64@0.15.18:
@@ -1625,7 +1628,7 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-arm64@0.15.18:
@@ -1634,7 +1637,7 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-arm@0.15.18:
@@ -1643,7 +1646,7 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-mips64le@0.15.18:
@@ -1652,7 +1655,7 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-ppc64le@0.15.18:
@@ -1661,7 +1664,7 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-riscv64@0.15.18:
@@ -1670,7 +1673,7 @@ packages:
     cpu: [riscv64]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-linux-s390x@0.15.18:
@@ -1679,7 +1682,7 @@ packages:
     cpu: [s390x]
     os: [linux]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-netbsd-64@0.15.18:
@@ -1688,7 +1691,7 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-openbsd-64@0.15.18:
@@ -1697,7 +1700,7 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-sunos-64@0.15.18:
@@ -1706,7 +1709,7 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-windows-32@0.15.18:
@@ -1715,7 +1718,7 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-windows-64@0.15.18:
@@ -1724,7 +1727,7 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild-windows-arm64@0.15.18:
@@ -1733,7 +1736,7 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: false
+    dev: true
     optional: true
 
   /esbuild@0.15.18:
@@ -1764,7 +1767,7 @@ packages:
       esbuild-windows-32: 0.15.18
       esbuild-windows-64: 0.15.18
       esbuild-windows-arm64: 0.15.18
-    dev: false
+    dev: true
 
   /esbuild@0.16.17:
     resolution: {integrity: sha512-G8LEkV0XzDMNwXKgM0Jwu3nY3lSTwSGY6XbxM9cr9+s0T/qSV1q1JVPBGzm3dcjhCic9+emZDmMffkwgPeOeLg==}
@@ -1816,8 +1819,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-plugin-qwik@1.2.12(eslint@8.50.0):
-    resolution: {integrity: sha512-BdwXm3UcBlufWOvOFJSoqxImHa9LcM3k44/oTshcuNa4+iOuiR8FFb/pFn7kk5BcugH7gUOsOyhQlvpKauOqXw==}
+  /eslint-plugin-qwik@1.2.14(eslint@8.50.0):
+    resolution: {integrity: sha512-FwSlyIPD1h6anfuGrmRK+oHEbqDCs96guCXzzKYD6NpjNZiwzJsgawEZkg5mKt2Qu4SCZk6JMaxtT04NvNeppQ==}
     engines: {node: '>=16.8.0 <18.0.0 || >=18.11'}
     peerDependencies:
       eslint: ^8.45.0
@@ -2087,8 +2090,8 @@ packages:
     engines: {node: '>= 14.17'}
     dev: true
 
-  /form-data@3.0.1:
-    resolution: {integrity: sha512-RHkBKtLWUVwd7SqRIvCZMEvAMoGUp0XU+seQiZejj0COz3RI3hWP4sCv3gZWWLjJTd7rGwcsF5eKZGii0r/hbg==}
+  /form-data@4.0.0:
+    resolution: {integrity: sha512-ETEklSGi5t0QMZuiXoA/Q6vcnxcLQP5vdugSpuAyi6SVGi2clPPp+xgEhuMaHC+zGgn31Kd235W35f7Hykkaww==}
     engines: {node: '>= 6'}
     dependencies:
       asynckit: 0.4.0
@@ -2556,10 +2559,10 @@ packages:
       side-channel: 1.0.4
     dev: true
 
-  /ionicons@7.1.2:
-    resolution: {integrity: sha512-zZ4njAqSP39H8RRvZhJvkHsv7cBjYE/VfInH218Osf2UVxJITSOutTTd25MW+tAXKN5fheYzclUXUsF55JHUDg==}
+  /ionicons@7.2.1:
+    resolution: {integrity: sha512-2pvCM7DGVEtbbj48PJzQrCADCQrqjU1nUYX9l9PyEWz3ZfdnLdAouqwPxLdl8tbaF9cE7OZRSlyQD7oLOLnGoQ==}
     dependencies:
-      '@stencil/core': 2.22.2
+      '@stencil/core': 4.5.0
     dev: true
 
   /is-array-buffer@3.0.2:
@@ -3031,8 +3034,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /lucide-static@0.279.0:
-    resolution: {integrity: sha512-VQ/cR0TFYIfU3+Jsr8HNo2wFqpE7EkusgBYL7z/+TVCOBVbn9IDKhFE61/6yYiMwtc3MYeIBtj6pb6i2xcKb5Q==}
+  /lucide-static@0.288.0:
+    resolution: {integrity: sha512-Sv+COmIThH0ImVbTAUfO2+77O9C1AZFXhIraCXPfvUXYGv7BG8ihxr4oGCQuDBRyxej4xJiD+4kK7qzbLygwoA==}
     dev: true
 
   /make-dir@3.1.0:
@@ -3968,10 +3971,10 @@ packages:
     resolution: {integrity: sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==}
     dev: true
 
-  /simple-icons@8.6.0:
-    resolution: {integrity: sha512-A5rRhFdgsV+1LIdkzIuwa+ilYb1v+svDi1ojOcfnEXaYSsTAlYRpWcH+p0MM1XY7uIkiNJ8i9bkFRoysMbLopw==}
+  /simple-icons@9.18.0:
+    resolution: {integrity: sha512-vraWnidtbLNLBuT4flpsMAFbIUqaRI+l2Czyt3fHYQ6A2/DaQ3r1L2MrHXjIx64LyatCgM4AOkhYMIRSG2q5aA==}
     engines: {node: '>=0.12.18'}
-    dev: false
+    dev: true
 
   /slash@3.0.0:
     resolution: {integrity: sha512-g9Q1haeby36OSStwb4ntCGGGaKsaVSjQ68fBxoQcutl5fS1vuY18H3wSt3jFyFtrkx+Kz0V1G85A4MyAdDMi2Q==}
@@ -4275,7 +4278,7 @@ packages:
     hasBin: true
     dependencies:
       esbuild: 0.15.18
-    dev: false
+    dev: true
 
   /tsutils@3.21.0(typescript@4.9.5):
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
