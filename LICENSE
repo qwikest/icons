@@ -15,6 +15,9 @@ Icons are taken from other projects. Please check each individual license for us
 Bootstrap: MIT
 https://github.com/twbs/icons/blob/main/LICENSE.md
 
+Flowbite: MIT
+https://github.com/themesberg/flowbite-icons/blob/main/LICENSE
+
 Heroicons: MIT
 https://opensource.org/licenses/MIT
 
@@ -27,7 +30,7 @@ https://github.com/ionic-team/ionicons/blob/master/LICENSE
 Lucide: ISC
 https://github.com/lucide-icons/lucide/blob/main/LICENSE
 
-MaterialIcons: MIT
+MaterialIcons: Apache 2.0
 https://github.com/google/material-design-icons/blob/master/LICENSE
 
 MonoIcons: MIT
