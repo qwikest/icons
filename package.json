@@ -34,6 +34,11 @@
       "require": "./lib/go.qwik.cjs",
       "types": "./lib/icons/go/go.d.ts"
     },
+    "./flowbite": {
+      "import": "./lib/fl.qwik.mjs",
+      "require": "./lib/fl.qwik.cjs",
+      "types": "./lib/icons/fl/fl.d.ts"
+    },
     "./heroicons": {
       "import": "./lib/hi.qwik.mjs",
       "require": "./lib/hi.qwik.cjs",
@@ -82,6 +87,9 @@
       ],
       "bootstrap": [
         "./lib/icons/bs/bs.d.ts"
+      ],
+      "flowbite": [
+        "./lib/icons/fl/fl.d.ts"
       ],
       "octicons": [
         "./lib/icons/go/go.d.ts"
