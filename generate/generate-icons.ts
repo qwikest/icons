@@ -26,6 +26,7 @@ function dashCase(input: string) {
   return input
     .replace(/(?<!^)[A-Z]/g, (match) => "-" + match.toLowerCase())
     .replace(/ /g, "-")
+    .replace(/&/g, "-and-")
     .replace(/--+/g, "-")
     .toLowerCase();
 }
@@ -35,7 +36,8 @@ export function camelCase(input: string) {
     .replace(/(?:^|[- _])+([a-z0-9])/g, (result) => {
       return result.replace(/^[- _]+/, "").toUpperCase();
     })
-    .replace(/[0-9][a-z]/g, (match) => match.toUpperCase());
+    .replace(/[0-9][a-z]/g, (match) => match.toUpperCase())
+    .replace(/&/g, 'And');;
 }
 
 function getIconVariantNames(path: string, pack: IconPackConfig) {
