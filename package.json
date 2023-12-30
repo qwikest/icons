@@ -54,6 +54,11 @@
       "require": "./lib/in.qwik.cjs",
       "types": "./lib/icons/in/in.d.ts"
     },
+    "./iconsax": {
+      "import": "./lib/is.qwik.mjs",
+      "require": "./lib/is.qwik.cjs",
+      "types": "./lib/icons/is/is.d.ts"
+    },
     "./ionicons": {
       "import": "./lib/io.qwik.mjs",
       "require": "./lib/io.qwik.cjs",
@@ -107,6 +112,9 @@
       ],
       "iconoir": [
         "./lib/icons/in/in.d.ts"
+      ],
+      "iconsax": [
+        "./lib/icons/is/is.d.ts"
       ],
       "ionicons": [
         "./lib/icons/io/io.d.ts"

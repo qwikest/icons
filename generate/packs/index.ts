@@ -5,6 +5,7 @@ export * from "./font-awesome-free";
 // export * from "./boxicons";
 export * from "./heroicons";
 export * from "./iconoir";
+export * from "./iconsax";
 export * from "./ionicons";
 export * from "./lucide";
 export * from "./material";
